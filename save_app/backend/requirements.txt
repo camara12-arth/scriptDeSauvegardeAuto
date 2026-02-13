@@ -1,0 +1,71 @@
+Flask est un Framework
+
+est un Framework web qui Permet de Créer des API REST
+Léger et simple à prendre en main
+Permet de créer des endpoints API facilement
+Idéal pour les micro-services
+Gère les routes, requêtes HTTP, JSON
+
+Flask-CORS est une extension de Flask
+
+Sans CORS, votre frontend (React) ne pourrait pas communiquer avec le backend
+Utile si l'interface web est sur un port différent (ex: frontend sur 3000, backend sur 5000)
+Permet le développement avec séparation frontend/backend
+Évite les erreurs de sécurité du navigateur
+
+
+schedule  C'est une bibliothèque (library)
+
+Permet d'exécuter des tâches en arrière-plan
+Gère les sauvegardes programmées (quotidienne, hebdomadaire...)
+Continue de fonctionner même si l'utilisateur quitte la page
+Maintient la planification tant que le serveur tourne   
+
+
+backup_routes.py
+
+Reçoit une requête POST avec des données JSON (source, destination, fréquence)
+Appelle le service de sauvegarde (handle_backup) pour effectuer le travail
+Retourne une réponse JSON selon le résultat :
+Succès (200) : {"success": true, "message": "Sauvegarde réussie", "file": "nom_du_fichier"}
+Erreur (400) : {"success": false, "error": "message d'erreur"} 
+
+history_routes.py
+
+Route 1 : /api/history (GET)
+Rôle : Récupère tout l'historique des sauvegardes
+Retourne : La liste complète des sauvegardes effectuées
+Exemple : Dates, fichiers, statuts de chaque sauvegarde
+Route 2 : /api/stats (GET)
+Rôle : Récupère les statistiques pour les graphiques
+Retourne : Données agrégées (ex: nombre de sauvegardes par jour, succès/échecs)
+ Utilisation : Alimenter les graphiques du frontend
+
+ backup_service.py
+ Fonction handle_backup(data) (appelée par l'API)
+Vérifie que tous les champs requis sont présents
+Appelle create_backup() pour créer l'archive
+Crée une entrée avec :
+Nom du fichier, source, destination, fréquence
+Statut (Succès/Échec) et date/heure
+Sauvegarde cette entrée dans l'historique
+
+Fonction save_history(entry) (gestionnaire d'historique)
+Crée le fichier history.json s'il n'existe pas
+ Met à jour une entrée existante (même source/destination/fréquence)
+ Ou ajoute une nouvelle entrée si configuration inédite
+ Conserve tout l'historique des sauvegardes
+
+
+file_utils.py
+
+Fonction create_backup(source, destination)
+
+ Vérifie que le dossier source existe
+ Crée le dossier destination s'il n'existe pas
+ Génère un nom unique avec horodatage : backup_AAAA-MM-JJ_HH-MM-SS.tar.gz
+ Compresse tout le dossier source en 
+
+ Retourne :
+Succès : (True, "nom_du_fichier")
+Échec : (False, "message_erreur")
