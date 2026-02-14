@@ -9,6 +9,6 @@ export type BackupType = {
         source: string;
         destination: string;
         frequency:string;
-        status: string;
+        status: "Success" | "Echec";
         last_backup: string;
 }
