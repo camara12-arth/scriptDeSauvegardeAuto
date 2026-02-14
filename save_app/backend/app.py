@@ -8,10 +8,10 @@ from services.history_service import get_history
 import datetime
 
 app = Flask(__name__)
-CORS(app, origins=['http://localhost:5173'])
-
+CORS(app, origins=["http://localhost:5173"])
 app.register_blueprint(backup_bp)
 app.register_blueprint(history_bp)
+
 
 @app.route("/api/test", methods=["GET"])
 def test():

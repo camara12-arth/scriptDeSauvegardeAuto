@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import useHistory from "../hooks/useHistory";
 import { HomeIcon } from "lucide-react";
+import { format } from "date-fns";
 
 type HistoryProps = {
     onVue: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,7 +11,6 @@ export default function History({onVue}:HistoryProps) {
 
     useEffect(() => {
         getHistory();
-        console.log(history);
     }, []);
 
   return (
@@ -30,7 +30,7 @@ export default function History({onVue}:HistoryProps) {
             <p className="text-sm text-blue-900"><span className="text-secondary-foreground">Destination:</span> {backup.destination}</p>
             <p className="text-sm text-blue-900"><span className="text-secondary-foreground">Fréquence:</span> {backup.frequency}</p>
             <p className="text-sm text-blue-900"><span className="text-secondary-foreground">Statut:</span> {backup.status==="Success"?<span className="text-green-300">{backup.status}</span>:<span className="text-red-500">{backup.status}</span>}</p>
-            <p className="text-sm text-blue-900"><span className="text-secondary-foreground">Dernière sauvegarde:</span> {backup.last_backup??"Pas Sauvegarder"}</p>
+            <p className="text-sm text-blue-900"><span className="text-secondary-foreground">Dernière sauvegarde:</span> {backup.last_backup?format(new Date(backup.last_backup), "dd/MM/yyyy HH:mm:ss"):"Pas Sauvegarder"}</p>
             <hr className="w-full text-primary" />
           </div>
           

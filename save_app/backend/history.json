@@ -136,12 +136,12 @@
         "last_backup": null
     },
     {
-        "filename": "web_2026-02-14_14-29-09.zip",
+        "filename": "web_2026-02-14_19-54-36.zip",
         "source": "C:\\Users\\hamid\\web",
         "destination": "~/backup",
         "frequency": "weekly",
         "status": "Success",
-        "last_backup": "2026-02-14T14:29:09.898276"
+        "last_backup": "2026-02-14T19:54:37.132551"
     },
     {
         "filename": null,
