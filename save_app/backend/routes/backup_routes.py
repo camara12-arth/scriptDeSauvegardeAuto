@@ -6,13 +6,13 @@ backup_bp = Blueprint("backup", __name__)
 @backup_bp.route("/api/backup", methods=["POST"])
 def backup():
     data = request.get_json()
-
+    
     success, result = handle_backup(data)
 
     if success:
         return jsonify({
             "success": True,
-            "message": "Sauvegarde réussie",
+            "message": "Sauvegarde reussie",
             "file": result
         }), 200
     else:

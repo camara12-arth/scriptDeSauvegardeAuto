@@ -2,29 +2,25 @@ import axios from "axios";
 import { useState } from "react";
 
 export default function useSauvegarde() {
- const [sourceFiles, setSourceFiles] = useState<FileList | null>(null);
+ const [sourceFiles, setSourceFiles] = useState<string>("");
   const [destination, setDestination] = useState("");
   const [recurrence, setRecurrence] = useState("daily");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSourceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setSourceFiles(e.target.files);
-    }
-  };
+  let value = e.target.value.trim();
+  // Supprimer guillemets de début/fin s'il y en a
+  if ((value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))) {
+    value = value.slice(1, -1);
+  }
+  setSourceFiles(value);
+};
 
-  const getFolderName = () => {
-    if (!sourceFiles || sourceFiles.length === 0) return "";
-    // webkitRelativePath usually contains the directory at index 0
-    const p = (sourceFiles[0] as any).webkitRelativePath as string | undefined;
-    if (p) return p.split("/")[0];
-    return sourceFiles[0].name;
-  };
 
-  const filePreview = () => {
-    if (!sourceFiles) return [] as string[];
-    return Array.from(sourceFiles).slice(0, 6).map((f) => f.name);
-  };
+  
+
+  
   const handleConfig = () => {
     alert("Fonctionnalité de configuration à venir !");
   };
@@ -35,21 +31,31 @@ export default function useSauvegarde() {
       return;
     }
 
-    const sourcePath = getFolderName();
+    
     setIsLoading(true);
     try {
-      const res = await axios.post("http://127.0.0.1:5000/api/backup", {
-        source: sourcePath,
-        destination,
+       await axios.post("http://127.0.0.1:5000/api/backup", {
+        source: sourceFiles,
+        destination: "~"+destination,
         frequency: recurrence,
+      }).then((response) => {
+         alert(response.data.message);
+      if (response.data.success) {
+        setDestination("");
+        setRecurrence("daily");
+        setSourceFiles("");
+      }
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la requête:", error);
+        
+        alert("Une erreur est survenue lors de la création de la sauvegarde.\nDétails: " + error.response?.data?.error);
+        setSourceFiles("");
       });
-
-      alert(`Sauvegarde créée: ${res.data.path}`);
-    } catch (error) {
-      console.error("Erreur lors de la sauvegarde:", error);
-      alert("Une erreur est survenue lors de la création de la sauvegarde.");
+    
     } finally {
       setIsLoading(false);
+     
     }
   };
   return {
@@ -58,8 +64,6 @@ export default function useSauvegarde() {
     recurrence,
     isLoading,
     handleSourceChange, 
-    getFolderName,
-    filePreview,
     handleConfig,
     handleSubmit,
     setDestination,

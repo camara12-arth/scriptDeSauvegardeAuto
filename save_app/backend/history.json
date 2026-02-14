@@ -46,5 +46,109 @@
         "frequency": "Quotidienne",
         "status": "Succ\u00e8s",
         "last_backup": "2026-02-13T19:10:38.803677"
+    },
+    {
+        "filename": null,
+        "source": "server",
+        "destination": "/backup",
+        "frequency": "daily",
+        "status": "Echec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "server",
+        "destination": "~/backup",
+        "frequency": "daily",
+        "status": "Echec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "server",
+        "destination": "~/backup",
+        "frequency": "weekly",
+        "status": "Echec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "\"C:\\Users\\hamid\\Desktop\\back_up_test\\Recherche operationnnel\"",
+        "destination": "~/backup",
+        "frequency": "weekly",
+        "status": "Echec",
+        "last_backup": null
+    },
+    {
+        "filename": "Recherche operationnnel_2026-02-14_13-52-53.zip",
+        "source": "C:\\Users\\hamid\\Desktop\\back_up_test\\Recherche operationnnel",
+        "destination": "~/backup",
+        "frequency": "weekly",
+        "status": "Success",
+        "last_backup": "2026-02-14T13:52:54.232055"
+    },
+    {
+        "filename": "Nouveau dossier (4)_2026-02-14_14-08-28.zip",
+        "source": "C:\\Users\\hamid\\Nouveau dossier (4)",
+        "destination": "~/backup/hebdo",
+        "frequency": "weekly",
+        "status": "Success",
+        "last_backup": "2026-02-14T14:08:31.505479"
+    },
+    {
+        "filename": "Nouveau dossier (4)_2026-02-14_14-13-57.zip",
+        "source": "C:\\Users\\hamid\\Nouveau dossier (4)",
+        "destination": "~/backup/hebdo",
+        "frequency": "monthly",
+        "status": "Success",
+        "last_backup": "2026-02-14T14:13:57.665101"
+    },
+    {
+        "filename": null,
+        "source": "C:\\Users\\hamid\\web\" \"C:\\Users\\hamid\\backup",
+        "destination": "~/backup/hebdo",
+        "frequency": "monthly",
+        "status": "Echec",
+        "last_backup": null
+    },
+    {
+        "filename": "web_2026-02-14_14-15-47.zip",
+        "source": "C:\\Users\\hamid\\web",
+        "destination": "~/backup/hebdo",
+        "frequency": "monthly",
+        "status": "Success",
+        "last_backup": "2026-02-14T14:15:48.548660"
+    },
+    {
+        "filename": null,
+        "source": "C:\\Users\\hamid\\web2",
+        "destination": "~/backup/hebdo",
+        "frequency": "monthly",
+        "status": "Echec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "C:\\Users\\hamid\\web3",
+        "destination": "~/backup",
+        "frequency": "weekly",
+        "status": "Echec",
+        "last_backup": null
+    },
+    {
+        "filename": "web_2026-02-14_14-29-09.zip",
+        "source": "C:\\Users\\hamid\\web",
+        "destination": "~/backup",
+        "frequency": "weekly",
+        "status": "Success",
+        "last_backup": "2026-02-14T14:29:09.898276"
+    },
+    {
+        "filename": null,
+        "source": "C:\\Users\\hamid\\web3",
+        "destination": "~/backup",
+        "frequency": "daily",
+        "status": "Echec",
+        "last_backup": null
     }
 ]

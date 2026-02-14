@@ -9,8 +9,6 @@ export default function Sauvegarde() {
     recurrence,
     isLoading,
     handleSourceChange, 
-    getFolderName,
-    filePreview,
     handleConfig,
     handleSubmit,
     setDestination,
@@ -49,28 +47,18 @@ export default function Sauvegarde() {
           <div>
             <label className="block text-sm mb-2">Dossier source</label>
             <div className="flex items-center gap-2">
-              <label className="inline-flex items-center gap-2 bg-secondary/10 border border-border rounded px-3 py-2 cursor-pointer hover:bg-secondary/20 transition">
+              <label className="inline-flex items-center gap-2 bg-secondary/10 border border-border rounded px-3 py-2  hover:bg-secondary/20 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-secondary-foreground" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M4 3a2 2 0 00-2 2v2h16V5a2 2 0 00-2-2H4z" />
                   <path d="M18 9H2v5a3 3 0 003 3h10a3 3 0 003-3V9z" />
                 </svg>
                 <span className="text-sm">Choisir dossier</span>
-                {/* hidden file input */}
-                {/* @ts-ignore */}
-                <input type="file" webkitdirectory="true" directory="true" multiple onChange={handleSourceChange} className="hidden" />
+               
+                <input type="text"  onChange={handleSourceChange} value={sourceFiles} className="w-full border p-2 rounded" />
               </label>
-              <div className="text-sm text-secondary-foreground">{getFolderName() || "Aucun dossier sélectionné"}</div>
+              {(sourceFiles=="")?<div className="text-sm text-secondary-foreground"> Aucun dossier sélectionné</div>:null}
             </div>
-            {sourceFiles && (
-              <div className="mt-3 bg-background/40 border border-border rounded p-2 text-sm max-h-13 overflow-auto">
-                <div className="font-medium mb-1 ">Aperçu ({sourceFiles.length} fichiers)</div>
-                <ul className="list-disc pl-5 space-y-1">
-                  {filePreview().map((name) => (
-                    <li key={name} className="truncate">{name}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+           
           </div>
 
           <div>
