@@ -23,28 +23,28 @@ Arborescence principale (extrait)
   - src/ — code React, composants et hooks
   - vite.config.ts, package.json — config dev/build
 
-Installation (Windows — bash)
+Installation 
 - Backend
   ```bash
-  cd c:\Users\hamid\Desktop\app-sav-auto\scriptDeSauvegardeAuto\save_app\backend
+  cd save_app\backend
   python -m pip install -r requirements.txt
   ```
 - Frontend
   ```bash
-  cd c:\Users\hamid\Desktop\app-sav-auto\scriptDeSauvegardeAuto\save_app\front-end
+  cd save_app\front-end
   npm install
   ```
 
 Lancer en développement
 - Démarrer le backend
   ```bash
-  cd ...\save_app\backend
+  cd save_app\backend
   python app.py
   # http://127.0.0.1:5000
   ```
 - Démarrer le frontend
   ```bash
-  cd ...\save_app\front-end
+  cd save_app\front-end
   npm run dev
   # http://localhost:5173
   ```

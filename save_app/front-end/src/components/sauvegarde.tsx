@@ -1,15 +1,21 @@
 
+
+import { HistoryIcon } from "lucide-react";
 import useSauvegarde from "../hooks/useSauvegarde";
 
-export default function Sauvegarde() {
- 
+type SauvegardeProps = {
+  onVue: React.Dispatch<React.SetStateAction<boolean>>;
+  
+}
+
+export default function Sauvegarde({onVue}:SauvegardeProps) {
+
   const {
     sourceFiles,
     destination,
     recurrence,
     isLoading,
     handleSourceChange, 
-    handleConfig,
     handleSubmit,
     setDestination,
     setRecurrence,
@@ -18,15 +24,9 @@ export default function Sauvegarde() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-background text-foreground p-6">
       <div className="relative w-full max-w-2xl bg-card/60 backdrop-blur rounded-xl shadow-lg p-8">
-              <button className="absolute top-3 right-3 flex items-center gap-2 text-primary cursor-pointer hover:text-primary/80 transition" onClick={handleConfig}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6"
-        >
-          <path
-           d="M12 8.5C10.07 8.5 8.5 10.07 8.5 12C8.5 13.93 10.07 15.5 12 15.5C13.93 15.5 15.5 13.93 15.5 12C15.5 10.07 13.93 8.5 12 8.5ZM19.43 12.98C19.47 12.66 19.5 12.34 19.5 12C19.5 11.66 19.47 11.34 19.43 11.02L21.05 9.76C21.21 9.63 21.26 9.39 21.17 9.19L19.37 5.81C19.27 5.61 19.05 5.52 18.84 5.58L16.86 6.18C16.45 5.86 16.01 5.59 15.53 5.37L15.25 3.32C15.22 3.14 15.08 3 14.9 3H9.1C8.92 3 8.78 3.14 8.75 3.32L8.47 5.37C7.99 5.59 7.55 5.87 7.14 6.18L5.16 5.58C4.95 5.52 4.73 5.61 4.63 5.81L2.83 9.19C2.74 9.39 2.79 9.63 2.95 9.76L4.57 11.02C4.53 11.34 4.5 11.66 4.5 12C4.5 12.34 4.53 12.66 4.57 12.98L2.95 14.24C2.79 14.37 2.74 14.61 2.83 14.81L4.63 18.19C4.73 18.39 4.95 18.48 5.16 18.42L7.14 17.82C7.55 18.14 7.99 18.41 8.47 18.63L8.75 20.68C8.78 20.86 8.92 21 9.1 21H14.9C15.08 21 15.22 20.86 15.25 20.68L15.53 18.63C16.01 18.41 16.45 18.13 16.86 17.82L18.84 18.42C19.05 18.48 19.27 18.39 19.37 18.19L21.17 14.81C21.26 14.61 21.21 14.37 21.05 14.24L19.43 12.98Z"
-          />
-        </svg>
-        configurations
+              <button className="absolute top-3 right-3 flex items-center gap-2 text-primary cursor-pointer hover:text-primary/80 transition" onClick={()=>onVue(prev=>!prev)}>
+       <HistoryIcon className="w-5 h-5 bg-primary text-primary-foreground" />
+       History
       </button>
           {/* header de l'app (tu pourra creer le composant Header) */}
         <div className="flex items-center gap-4 mb-6">

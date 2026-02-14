@@ -18,12 +18,6 @@ export default function useSauvegarde() {
 };
 
 
-  
-
-  
-  const handleConfig = () => {
-    alert("Fonctionnalité de configuration à venir !");
-  };
 
   const handleSubmit = async () => {
     if (!sourceFiles) {
@@ -64,7 +58,6 @@ export default function useSauvegarde() {
     recurrence,
     isLoading,
     handleSourceChange, 
-    handleConfig,
     handleSubmit,
     setDestination,
     setRecurrence,
