@@ -50,7 +50,7 @@ def handle_backup(data):
         "source": source,
         "destination": destination,
         "frequency": frequency,
-        "status": "Succès" if success else "Échec",
+        "status": "Success" if success else "Echec",
         "last_backup": last_backup_time
     }
 
