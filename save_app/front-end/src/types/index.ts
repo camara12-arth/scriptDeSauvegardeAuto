@@ -1,8 +1,10 @@
-export type ConfigType = {
-  source: string;
-  destination: string;
+export type InputFieldType = {
+   sourceFiles: string;
+    destination: string;
     recurrence: string;
-    lastBackup: string;
+    handleSourceChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    setDestination: React.Dispatch<React.SetStateAction<string>>;
+    setRecurrence: React.Dispatch<React.SetStateAction<string>>;
 };
 export type BackupType = {
     filename: string;
