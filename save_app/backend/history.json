@@ -150,5 +150,13 @@
         "frequency": "daily",
         "status": "Echec",
         "last_backup": null
+    },
+    {
+        "filename": "Images_2026-02-14_14-35-05.zip",
+        "source": "C:\\Users\\hamid\\OneDrive\\Images",
+        "destination": "~/backup",
+        "frequency": "daily",
+        "status": "Success",
+        "last_backup": "2026-02-14T14:35:23.695774"
     }
 ]
