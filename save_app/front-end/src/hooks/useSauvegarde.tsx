@@ -38,10 +38,10 @@ export default function useSauvegarde() {
     const sourcePath = getFolderName();
     setIsLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/backup", {
+      const res = await axios.post("http://127.0.0.1:5000/api/backup", {
         source: sourcePath,
         destination,
-        recurrence,
+        frequency: recurrence,
       });
 
       alert(`Sauvegarde créée: ${res.data.path}`);
