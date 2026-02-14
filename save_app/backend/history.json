@@ -1,0 +1,50 @@
+[
+    {
+        "filename": "mon_projet_2026-02-13_17-58-54.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "/home/sanoussi/Bureau",
+        "frequency": "Quotidienne",
+        "status": "Succ\u00e8s",
+        "last_backup": "2026-02-13T17:58:54.608654"
+    },
+    {
+        "filename": null,
+        "source": "/home/sanoussi/Documents/mon_proje",
+        "destination": "/home/sanoussi/Bureau",
+        "frequency": "Quotidienne",
+        "status": "\u00c9chec",
+        "last_backup": null
+    },
+    {
+        "filename": "mon_projet_2026-02-13_18-01-18.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "/home/sanoussi/Bureau/git",
+        "frequency": "Quotidienne",
+        "status": "Succ\u00e8s",
+        "last_backup": "2026-02-13T18:01:19.041378"
+    },
+    {
+        "filename": "mon_projet_2026-02-13_18-10-35.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "/home/sanoussi/Bureau/nom",
+        "frequency": "Quotidienne",
+        "status": "Succ\u00e8s",
+        "last_backup": "2026-02-13T18:10:35.155003"
+    },
+    {
+        "filename": "mon_projet_2026-02-13_19-09-02.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "/home/sanoussi/Bureau/hamidou",
+        "frequency": "Quotidienne",
+        "status": "Succ\u00e8s",
+        "last_backup": "2026-02-13T19:09:02.678840"
+    },
+    {
+        "filename": "mon_projet_2026-02-13_19-10-38.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "/home/sanoussi/baba",
+        "frequency": "Quotidienne",
+        "status": "Succ\u00e8s",
+        "last_backup": "2026-02-13T19:10:38.803677"
+    }
+]
