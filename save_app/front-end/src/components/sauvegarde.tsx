@@ -46,59 +46,11 @@ export default function Sauvegarde({onVue}:SauvegardeProps) {
           </div>
         </div>
 
-        {/* choix du dossier source et de la destination de sauvegarde (tu pourras creer un composant pour InputField pour cette parti puis passer les diffrentes handle... en callback)*/}
-        {/* puis creer un composant Config qui vas nous permettre de recuperer les config de sauvegarde par exemple la recurrence, le chemin du dossier source et dest puis la date de la derniere sauvegarde */}
-        {/* j'ai creer un type pour t'aider exe: const [configs,setconfigs]= useState<ConfigType>() */}
-        {/* tu pourras recuperer les configs grace a axios.get(http://localhost:5000/backup) dans un useEffect avec un tableau de dependance vide exe:[] */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label className="block text-sm mb-2">Dossier source</label>
-            <div className="flex items-center gap-2">
-              <label className="inline-flex items-center gap-2 bg-secondary/10 border border-border rounded px-3 py-2  hover:bg-secondary/20 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-secondary-foreground" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M4 3a2 2 0 00-2 2v2h16V5a2 2 0 00-2-2H4z" />
-                  <path d="M18 9H2v5a3 3 0 003 3h10a3 3 0 003-3V9z" />
-                </svg>
-                <span className="text-sm">Choisir dossier</span>
-               
-                {/* <input type="text"  onChange={handleSourceChange} value={sourceFiles} className="w-full border p-2 rounded" /> */}
-               <input
-  type="file"
-  {...({ webkitdirectory: "true" } as any)}
-  className="hidden"
-  onChange={handleSourceChange}
-/>
+      
 
-              </label>
-              {(sourceFiles=="")?<div className="text-sm text-secondary-foreground"> Aucun dossier sélectionné</div>:null}
-            </div>
-           
-          </div>
-
-          <div>
-            <label className="block text-sm mb-2">Destination</label>
-            <input
-              type="text"
-              placeholder="Chemin destination (ex: /backups)"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-              className="w-full border p-2 rounded"
-            />
-           <label className="block text-sm mt-4 mb-2">Récurrence</label>
-            <select value={recurrence} onChange={(e) => setRecurrence(e.target.value)} className="w-full border p-2 rounded">
-              <option value="daily">Quotidienne</option>
-              <option value="weekly">Hebdomadaire</option>
-              <option value="monthly">Mensuelle</option>
-              <option value="yearly">Annuelle</option>
-            </select>
-          </div>
-        </div>
-
-          {/* composant de selection du dossier source, destination et recurrence */}
-        {/* regarde bien comment est InputField puis tu vas creer un autre composant SubmitButton */}
+       
         <InputField sourceFiles={sourceFiles} destination={destination} recurrence={recurrence}  handleSourceChange={handleSourceChange} setDestination={setDestination} setRecurrence={setRecurrence}/>
-          {/* bouton de lancement de la sauvegarde */}
-          {/* //----- ici tu vas faire un composant qui s'appelle SubmitButton et qui va prendre en props isLoading et handleSubmit et qui va afficher un bouton avec un spinner quand isLoading est true et qui va appeler handleSubmit quand on clique dessus */}
+          
         <div className="flex items-center justify-between mt-6">
           <div className="text-sm text-secondary-foreground">
             Prêt à lancer la sauvegarde
@@ -109,7 +61,7 @@ export default function Sauvegarde({onVue}:SauvegardeProps) {
             onClick={handleSubmit}
             disabled={!sourceFiles || !destination}
           >
-            Lancer la sauvegarde
+            sauvegarder
           </SubmitButton>
         </div>
 
