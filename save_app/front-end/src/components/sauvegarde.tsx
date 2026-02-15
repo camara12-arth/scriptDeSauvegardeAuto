@@ -2,8 +2,10 @@
 
 import { HistoryIcon } from "lucide-react";
 import useSauvegarde from "../hooks/useSauvegarde";
+
 import SubmitButton from "./SubmitButton";
 
+import InputField from "./InputField";
 
 type SauvegardeProps = {
   onVue: React.Dispatch<React.SetStateAction<boolean>>;
@@ -43,6 +45,7 @@ export default function Sauvegarde({onVue}:SauvegardeProps) {
             <p className="text-sm text-primary">Sélectionnez un dossier, choisissez la destination et la fréquence.</p>
           </div>
         </div>
+
         {/* choix du dossier source et de la destination de sauvegarde (tu pourras creer un composant pour InputField pour cette parti puis passer les diffrentes handle... en callback)*/}
         {/* puis creer un composant Config qui vas nous permettre de recuperer les config de sauvegarde par exemple la recurrence, le chemin du dossier source et dest puis la date de la derniere sauvegarde */}
         {/* j'ai creer un type pour t'aider exe: const [configs,setconfigs]= useState<ConfigType>() */}
@@ -91,6 +94,11 @@ export default function Sauvegarde({onVue}:SauvegardeProps) {
           </div>
         </div>
 
+          {/* composant de selection du dossier source, destination et recurrence */}
+        {/* regarde bien comment est InputField puis tu vas creer un autre composant SubmitButton */}
+        <InputField sourceFiles={sourceFiles} destination={destination} recurrence={recurrence}  handleSourceChange={handleSourceChange} setDestination={setDestination} setRecurrence={setRecurrence}/>
+          {/* bouton de lancement de la sauvegarde */}
+          {/* //----- ici tu vas faire un composant qui s'appelle SubmitButton et qui va prendre en props isLoading et handleSubmit et qui va afficher un bouton avec un spinner quand isLoading est true et qui va appeler handleSubmit quand on clique dessus */}
         <div className="flex items-center justify-between mt-6">
           <div className="text-sm text-secondary-foreground">
             Prêt à lancer la sauvegarde
@@ -105,7 +113,10 @@ export default function Sauvegarde({onVue}:SauvegardeProps) {
           </SubmitButton>
         </div>
 
+
       </div>
+
+        
       </div>
   );
 }
