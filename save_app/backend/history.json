@@ -1,11 +1,11 @@
 [
     {
-        "filename": "mon_projet_2026-02-13_17-58-54.tar.gz",
+        "filename": "mon_projet_2026-02-15_15-51-58.tar.gz",
         "source": "/home/sanoussi/Documents/mon_projet",
         "destination": "/home/sanoussi/Bureau",
         "frequency": "Quotidienne",
-        "status": "Success",
-        "last_backup": "2026-02-13T17:58:54.608654"
+        "status": "Succ\u00e8s",
+        "last_backup": "2026-02-15T15:51:58.872703"
     },
     {
         "filename": null,
@@ -160,11 +160,100 @@
         "last_backup": "2026-02-14T14:35:23.695774"
     },
     {
-        "filename": "weather-app-master_2026-02-15_20-59-46.zip",
-        "source": "C:\\Users\\hamid\\Downloads\\weather-app-master",
-        "destination": "~/backup",
-        "frequency": "monthly",
+
+        "filename": null,
+        "source": "/home/sanoussi/Documents/mon_projet\\",
+        "destination": "~/home/sanoussi/Bureau\\",
+        "frequency": "daily",
+        "status": "Echec",
+        "last_backup": null
+    },
+    {
+        "filename": "mon_projet_2026-02-14_22-03-54.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "~/home/sanoussi/Bureau",
+        "frequency": "daily",
         "status": "Success",
-        "last_backup": "2026-02-15T20:59:47.880847"
+        "last_backup": "2026-02-14T22:03:54.962149"
+    },
+    {
+        "filename": "mon_projet_2026-02-14_21-44-48.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "~/home/sanoussi/Bureau",
+        "frequency": "weekly",
+        "status": "Success",
+        "last_backup": "2026-02-14T21:44:48.991214"
+    },
+    {
+        "filename": "mon_projet_2026-02-14_21-49-20.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "~/home/sanoussi/Bur",
+        "frequency": "daily",
+        "status": "Success",
+        "last_backup": "2026-02-14T21:49:20.707616"
+    },
+    {
+        "filename": "Bureau_2026-02-15_15-54-49.tar.gz",
+        "source": "/home/sanoussi/Bureau",
+        "destination": "/home/sanoussi/~bur",
+        "frequency": "daily",
+        "status": "Succ\u00e8s",
+        "last_backup": "2026-02-15T15:54:49.069759"
+    },
+    {
+        "filename": null,
+        "source": "/home/sanoussi/Bur",
+        "destination": "/home/sanoussi/~bureau",
+        "frequency": "daily",
+        "status": "\u00c9chec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "/home/sanoussi/Bur",
+        "destination": "/home/sanoussi/~Bureau",
+        "frequency": "daily",
+        "status": "\u00c9chec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "/home/sanoussi/mon_projet",
+        "destination": "/home/sanoussi/~Bureau",
+        "frequency": "daily",
+        "status": "\u00c9chec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "/home/sanoussi/qr.code",
+        "destination": "/home/sanoussi/~Bureau",
+        "frequency": "daily",
+        "status": "\u00c9chec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "/home/sanoussi/scriptDeSauvegardeAuto/save_app/backend/mon_projet",
+        "destination": "/home/sanoussi/scriptDeSauvegardeAuto/save_app/backend/~Bureau",
+        "frequency": "daily",
+        "status": "\u00c9chec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "/home/sanoussi/scriptDeSauvegardeAuto/save_app/backend/mon_projet",
+        "destination": "/home/sanoussiBureau",
+        "frequency": "daily",
+        "status": "\u00c9chec",
+        "last_backup": null
+    },
+    {
+        "filename": null,
+        "source": "/home/sanoussi/mon_projet",
+        "destination": "/home/sanoussi/Bureau",
+        "frequency": "daily",
+        "status": "\u00c9chec",
+        "last_backup": null
     }
 ]
