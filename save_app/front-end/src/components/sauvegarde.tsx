@@ -2,6 +2,8 @@
 
 import { HistoryIcon } from "lucide-react";
 import useSauvegarde from "../hooks/useSauvegarde";
+import SubmitButton from "./SubmitButton";
+
 
 type SauvegardeProps = {
   onVue: React.Dispatch<React.SetStateAction<boolean>>;
@@ -28,6 +30,8 @@ export default function Sauvegarde({onVue}:SauvegardeProps) {
        <HistoryIcon className="w-5 h-5 bg-primary text-primary-foreground" />
        History
       </button>
+    
+      
           {/* header de l'app (tu pourra creer le composant Header) */}
         <div className="flex items-center gap-4 mb-6">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-primary">
@@ -54,7 +58,14 @@ export default function Sauvegarde({onVue}:SauvegardeProps) {
                 </svg>
                 <span className="text-sm">Choisir dossier</span>
                
-                <input type="text"  onChange={handleSourceChange} value={sourceFiles} className="w-full border p-2 rounded" />
+                {/* <input type="text"  onChange={handleSourceChange} value={sourceFiles} className="w-full border p-2 rounded" /> */}
+               <input
+  type="file"
+  {...({ webkitdirectory: "true" } as any)}
+  className="hidden"
+  onChange={handleSourceChange}
+/>
+
               </label>
               {(sourceFiles=="")?<div className="text-sm text-secondary-foreground"> Aucun dossier sélectionné</div>:null}
             </div>
@@ -70,33 +81,31 @@ export default function Sauvegarde({onVue}:SauvegardeProps) {
               onChange={(e) => setDestination(e.target.value)}
               className="w-full border p-2 rounded"
             />
-
-            <label className="block text-sm mt-4 mb-2">Récurrence</label>
+           <label className="block text-sm mt-4 mb-2">Récurrence</label>
             <select value={recurrence} onChange={(e) => setRecurrence(e.target.value)} className="w-full border p-2 rounded">
               <option value="daily">Quotidienne</option>
               <option value="weekly">Hebdomadaire</option>
               <option value="monthly">Mensuelle</option>
+              <option value="yearly">Annuelle</option>
             </select>
           </div>
         </div>
 
         <div className="flex items-center justify-between mt-6">
-          <div className="text-sm text-secondary-foreground">Prêt à lancer la sauvegarde</div>
-          <button
+          <div className="text-sm text-secondary-foreground">
+            Prêt à lancer la sauvegarde
+          </div>
+
+          <SubmitButton
+            isLoading={isLoading}
             onClick={handleSubmit}
-            disabled={!sourceFiles || isLoading}
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow hover:brightness-105 disabled:opacity-50 disabled:cursor-not-allowed transition"
+            disabled={!sourceFiles || !destination}
           >
-            {isLoading ? (
-              <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
-              </svg>
-            ) : null}
-            <span>{isLoading ? "En cours..." : "Lancer la sauvegarde"}</span>
-          </button>
+            Lancer la sauvegarde
+          </SubmitButton>
         </div>
+
       </div>
-    </div>
+      </div>
   );
 }

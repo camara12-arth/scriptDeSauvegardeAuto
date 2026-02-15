@@ -7,14 +7,21 @@ export default function useSauvegarde() {
   const [recurrence, setRecurrence] = useState("daily");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSourceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  let value = e.target.value.trim();
-  // Supprimer guillemets de début/fin s'il y en a
-  if ((value.startsWith('"') && value.endsWith('"')) ||
-      (value.startsWith("'") && value.endsWith("'"))) {
-    value = value.slice(1, -1);
+//   const handleSourceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//   let value = e.target.value.trim();
+//   // Supprimer guillemets de début/fin s'il y en a
+//   if ((value.startsWith('"') && value.endsWith('"')) ||
+//       (value.startsWith("'") && value.endsWith("'"))) {
+//     value = value.slice(1, -1);
+//   }
+//   setSourceFiles(value);
+// };
+const handleSourceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const files = e.target.files;
+  if (files && files.length > 0) {
+    const folderName = files[0].webkitRelativePath.split("/")[0];
+    setSourceFiles(folderName);
   }
-  setSourceFiles(value);
 };
 
 
@@ -61,5 +68,7 @@ export default function useSauvegarde() {
     handleSubmit,
     setDestination,
     setRecurrence,
+    setSourceFiles,
+
   };
 }

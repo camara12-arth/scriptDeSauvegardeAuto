@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import useHistory from "../hooks/useHistory";
 import { HomeIcon } from "lucide-react";
 import { format } from "date-fns";
+import HistoryCharts from "./HistoryCharts";
+
 
 type HistoryProps = {
     onVue: React.Dispatch<React.SetStateAction<boolean>>;
@@ -20,7 +22,8 @@ export default function History({onVue}:HistoryProps) {
        <HomeIcon className="w-5 h-5 bg-primary text-primary-foreground" />
        home
       </button>
-        <h1 className="text-2xl font-bold mb-4 text-primary">Historique des sauvegardes</h1>
+        <h1 className="text-2xl font-bold mb-4 text-primary">Historique des sauvegardes</h1>    
+        <HistoryCharts history={history || []} />
         {(history?.length === 0 || !history) ? (
           <p className="text-sm text-secondary-foreground">Aucune sauvegarde effectuée pour le moment.</p>
         ) : history.map((backup, index) => (
@@ -38,4 +41,6 @@ export default function History({onVue}:HistoryProps) {
       </div>
     </div>
   );
+
+
 }
