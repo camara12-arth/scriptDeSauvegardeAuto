@@ -199,61 +199,6 @@
         "frequency": "daily",
         "status": "Succ\u00e8s",
         "last_backup": "2026-02-15T15:54:49.069759"
-    },
-    {
-        "filename": null,
-        "source": "/home/sanoussi/Bur",
-        "destination": "/home/sanoussi/~bureau",
-        "frequency": "daily",
-        "status": "\u00c9chec",
-        "last_backup": null
-    },
-    {
-        "filename": null,
-        "source": "/home/sanoussi/Bur",
-        "destination": "/home/sanoussi/~Bureau",
-        "frequency": "daily",
-        "status": "\u00c9chec",
-        "last_backup": null
-    },
-    {
-        "filename": null,
-        "source": "/home/sanoussi/mon_projet",
-        "destination": "/home/sanoussi/~Bureau",
-        "frequency": "daily",
-        "status": "\u00c9chec",
-        "last_backup": null
-    },
-    {
-        "filename": null,
-        "source": "/home/sanoussi/qr.code",
-        "destination": "/home/sanoussi/~Bureau",
-        "frequency": "daily",
-        "status": "\u00c9chec",
-        "last_backup": null
-    },
-    {
-        "filename": null,
-        "source": "/home/sanoussi/scriptDeSauvegardeAuto/save_app/backend/mon_projet",
-        "destination": "/home/sanoussi/scriptDeSauvegardeAuto/save_app/backend/~Bureau",
-        "frequency": "daily",
-        "status": "\u00c9chec",
-        "last_backup": null
-    },
-    {
-        "filename": null,
-        "source": "/home/sanoussi/scriptDeSauvegardeAuto/save_app/backend/mon_projet",
-        "destination": "/home/sanoussiBureau",
-        "frequency": "daily",
-        "status": "\u00c9chec",
-        "last_backup": null
-    },
-    {
-        "filename": null,
-        "source": "/home/sanoussi/mon_projet",
-        "destination": "/home/sanoussi/Bureau",
-        "frequency": "daily",
-        "status": "\u00c9chec",
-        "last_backup": null
     }
+   
 ]
