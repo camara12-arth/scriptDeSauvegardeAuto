@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify
 from services.history_service import get_history, get_stats
 
 history_bp = Blueprint("history", __name__)
-
+#definition de la route history
 @history_bp.route("/api/history", methods=["GET"])
 def history():
     """Retourne l'historique complet au frontend"""

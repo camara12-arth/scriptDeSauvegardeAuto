@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 HISTORY_FILE = "history.json"
-
+#logique derniere la sauvegarde et l'archivage
 def save_history(entry):
     """Sauvegarde ou met à jour l'historique dans history.json"""
     if not os.path.exists(HISTORY_FILE):
