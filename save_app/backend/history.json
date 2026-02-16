@@ -198,6 +198,13 @@
         "frequency": "daily",
         "status": "Succ\u00e8s",
         "last_backup": "2026-02-15T15:54:49.069759"
+    },
+    {
+        "filename": "mon_projet_2026-02-16_17-17-11.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "~/sa",
+        "frequency": "weekly",
+        "status": "Success",
+        "last_backup": "2026-02-16T17:17:12.059152"
     }
-   
 ]
