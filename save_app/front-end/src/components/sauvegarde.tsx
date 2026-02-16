@@ -12,9 +12,11 @@ type SauvegardeProps = {
   
 }
 
+
 export default function Sauvegarde({onVue}:SauvegardeProps) {
 
 console.log("Hamidou");
+console.log("bonjour le conflit. A vous de le regler")
 
   const {
     sourceFiles,

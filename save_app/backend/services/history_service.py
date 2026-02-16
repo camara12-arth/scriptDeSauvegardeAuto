@@ -2,9 +2,9 @@ import json
 import os
 
 HISTORY_FILE = "history.json"
-
+#"""Retourne tout l'historique des sauvegardes"""
 def get_history():
-    """Retourne tout l'historique des sauvegardes"""
+    
     if not os.path.exists(HISTORY_FILE):
         with open(HISTORY_FILE, "w") as f:
             json.dump([], f)

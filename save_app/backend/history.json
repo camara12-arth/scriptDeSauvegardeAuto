@@ -200,27 +200,13 @@
         "last_backup": "2026-02-15T15:54:49.069759"
     },
     {
-        "filename": "Cours_2026-02-16_12-19-09.zip",
-        "source": "C:\\Users\\hamid\\Desktop\\Shell Bash\\Cours",
-        "destination": "~/backup/cours",
+
+        "filename": "mon_projet_2026-02-16_17-17-11.tar.gz",
+        "source": "/home/sanoussi/Documents/mon_projet",
+        "destination": "~/sa",
         "frequency": "weekly",
         "status": "Success",
-        "last_backup": "2026-02-16T12:22:22.778024"
-    },
-    {
-        "filename": "web_2026-02-16_17-50-48.zip",
-        "source": "C:\\Users\\hamid\\web",
-        "destination": "~/backup/projets",
-        "frequency": "monthly",
-        "status": "Success",
-        "last_backup": "2026-02-16T17:50:58.132948"
-    },
-    {
-        "filename": "web_2026-02-16_19-10-38.zip",
-        "source": "C:\\Users\\hamid\\web",
-        "destination": "~/backup/projets",
-        "frequency": "daily",
-        "status": "Success",
-        "last_backup": "2026-02-16T19:10:39.674878"
+        "last_backup": "2026-02-16T17:17:12.059152"
+
     }
 ]
