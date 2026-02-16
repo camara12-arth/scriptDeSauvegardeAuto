@@ -12,9 +12,12 @@ type SauvegardeProps = {
   
 }
 
-export defaultfunction Sauvegarde({onVue}:SauvegardeProps) {
-console.log("bonjour l'equipe")
-console.log("bonjour l'equipe")
+
+export default function Sauvegarde({onVue}:SauvegardeProps) {
+
+console.log("Hamidou");
+console.log("bonjour le conflit. A vous de le regler")
+
   const {
     sourceFiles,
     destination,
